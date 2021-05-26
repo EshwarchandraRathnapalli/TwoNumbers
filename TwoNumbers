@@ -1,0 +1,38 @@
+//Import Scanner class
+import java.util.*;
+//Import Math
+import java.lang.*;
+
+public class TwoNumbers {
+    public static void main(String[] args) {
+
+        //Create the Scanner object
+        Scanner sc = new Scanner(System.in);
+
+        //Input the number of test cases
+        int T = sc.nextInt();
+
+        //Loop till the number of test cases
+        for(int i=0; i<T; i++) {
+            //Input the A, B and N values
+            int A = sc.nextInt(); //Alice
+            int B = sc.nextInt(); //Bob
+            int N = sc.nextInt(); //Number of turns
+
+            int temp = N % 2;
+
+            //If temp = 0, then both will get equal nnumber of turns
+            if(temp == 0) {
+                int x = Math.max(A*2, B*2) / Math.min(A*2, B*2);
+                System.out.println(x);
+            }
+            //Otherwise the alice will get one more turn 
+            else {
+                int y = Math.max(A*2, B) / Math.min(A*2, B);
+                System.out.println(y);
+            }
+        }
+
+        sc.close();
+    }
+}
